@@ -1,7 +1,4 @@
-print('Welcom to GS(Gambling Simulator)')
-name = input("What is ur name")
 coins = 10000
-end_game = False
 num = [1,2,3,4,5,6,7,8,9,10]
 import random
 import sys
@@ -30,7 +27,7 @@ def gamble():
         print('You win u doubled ur money')
         coins -= bet
         coins = (2 * bet) + coins
-     
+    
     if comp > user:
         print('You Lost u lose ur money')
         coins -= bet
@@ -45,12 +42,7 @@ def gamble():
     
     if ch == 'no':
         end_game = True
-        
-    
-        
-while end_game == False:
-    
-    gamble()
+
     
     
     
