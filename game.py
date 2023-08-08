@@ -12,7 +12,3 @@ while end_game == False:
         gam.globals_Chef()
     if cm == 'Stop':
         end_game = True
-
-
-
-
