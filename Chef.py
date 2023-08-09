@@ -1,5 +1,5 @@
 import random
-import Gambling
+import Data
 from itertools import permutations
 
     
@@ -13,7 +13,7 @@ def globals_Chef():
 
     if dish == 'Fish and Chips': 
         print(f'You have to make {dish} \n', 'It costs 700')
-        Gambling.coins -= 700
+        Data.coins -= 700
         fish = ['🐟']
         perm = permutations(['🐖', '🍗', '🐏'],2)
         x = random.randint(1,6)
@@ -34,7 +34,7 @@ def globals_Chef():
         if ch == 'fish':
             profit = (700 * 1/10 ) + 700
             print(f'Great job u earnt {profit} coins')
-            Gambling.coins += profit
+            Data.coins += profit
         else:
             chance = 0 
             while chance < 1:
@@ -43,17 +43,17 @@ def globals_Chef():
                 if ch == 'fish':
                     profit = (700 * 1/20 ) + 700
                     print(f'Great job u earnt {profit}')
-                    Gambling.coins+=profit
+                    Data.coins+=profit
                 else:
                     print('You lost 700 coins')
-                    Gambling.coins -= 700
+                    Data.coins -= 700
                 chance = 1
                     
             
     
     if dish == 'Lasagna':
         print(f'You have to make {dish} \n', 'It costs 1500')
-        Gambling.coins -= 1500
+        Data.coins -= 1500
         
         Tom = ['🍅']
         perm = permutations(['🧅', '🥬', '🥕', '🍄'],2)
@@ -78,7 +78,7 @@ def globals_Chef():
                     profit = (1500 * 1/20 ) 
                 else:
                     print('You lose 300')
-                    Gambling.coins -= 300   
+                    Data.coins -= 300   
                 chance = 1
                     
         Bef = ['🐄']        
@@ -104,15 +104,15 @@ def globals_Chef():
                 if ch == 'beef':
                     profit2 = (1500 * 1/50 ) + profit + 1500
                     print(f'Great job u earnt {profit2}')
-                    Gambling.coins+=profit2
+                    Data.coins+=profit2
                 else:
                     print('You lost 1200 coins')
-                    Gambling.coins -= 1200       
+                    Data.coins -= 1200       
                 chance = 1
                     
     if dish == 'Ramen':
         print(f'You have to make {dish} \n', 'It costs 3000')
-        Gambling.coins -= 3000
+        Data.coins -= 3000
         Pork = ['']
         perm = permutations(['🐄', '🍗', '🐏'],2)
         x = random.randint(1,6)         
@@ -160,11 +160,11 @@ def globals_Chef():
                 if ch == 'carrot':
                     profit2 = (3000 * 1/100 ) + 3000 + profit
                     print(f'Great job u earnt {profit2}')
-                    Gambling.coins += profit2
+                    Data.coins += profit2
                 else:                    
                     print('You lost 1500 coins')
-                    Gambling.coins -= 3000 
+                    Data.coins -= 3000 
                 chance = 1
               
-    print(Gambling.coins)                      
+    print(Data.coins)                      
 
