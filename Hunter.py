@@ -1,6 +1,6 @@
 import Data
 import random
-
+import time
 mythical_creatures = [
     'Dragon'] * 1 + [
     'Unicorn'] * 5 + [
@@ -51,22 +51,29 @@ r_sword = choose_random_sword()
 sword_data = next(item for item in swords if item['name'] == r_sword)
 
 
-
 def Quest():
     creature_name = random.choice(mythical_creatures)
     creature_data = next(item for item in mythical_creatures_drops if item['name'] == creature_name)
     health = creature_data["hitpoints"] 
     print(f"You encountered a {creature_name}!")
     print(f"It drops the following parts: {', '.join(creature_data['parts'])}")
-    print(f'Its has {creature_data["hitpoints"]}')
-    print(f'You deal {sword_data["damage"]}')
+    print(f'It has {creature_data["hitpoints"]} hitpoints.')
+    print(f'You deal {sword_data["damage"]} damage.')
+
+
+
     while health > 0:
         input('Press any key to strike it')
         health -= sword_data['damage']
-        if health<0:
-            health= 0
-        print(f"It has {health}")
-    print('Good Job u won!')
+        if health < 0:
+            health = 0
+        print(f"It has {health} hitpoints remaining.")
+        print('Cooldown for 5 sec')
+        for i in range(1,6):
+            print(f'{i}')# Introduce cooldown after each strike
+            time.sleep(1)
+    print('Good job, you won!')
+    input('Press Enter to exit')
 
 def Adventurer():
     print("You are now an Adventurer.\nThese are the creatures you can find:")
