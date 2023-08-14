@@ -40,6 +40,31 @@ swords = [
     {'name': 'Thunderstrike', 'damage': 100},
     {'name': 'Soulrender', 'damage': 110}
 ]
+
+inventory = {}
+
+def add_item(item, quantity):
+    if item in inventory:
+        inventory[item] += quantity
+    else:
+        inventory[item] = quantity
+
+def remove_item(item, quantity):
+    if item in inventory:
+        if inventory[item] >= quantity:
+            inventory[item] -= quantity
+            if inventory[item] == 0:
+                del inventory[item]
+        else:
+            print("Not enough", item, "in inventory.")
+    else:
+        print(item, "not found in inventory.")
+
+def display_inventory():
+    print("Inventory:")
+    for item, quantity in inventory.items():
+        print(item, ":", quantity)
+
 def choose_random_sword():
     total_damage = sum(sword['damage'] for sword in swords)
     sword_probabilities = [(total_damage - sword['damage']) / total_damage for sword in swords]
@@ -59,7 +84,10 @@ def Quest():
     print(f"It drops the following parts: {', '.join(creature_data['parts'])}")
     print(f'It has {creature_data["hitpoints"]} hitpoints.')
     print(f'You deal {sword_data["damage"]} damage.')
+    add_item(r_sword, 1)
 
+    # Display the inventory after obtaining the sword
+    display_inventory()
 
 
     while health > 0:
