@@ -1,24 +1,28 @@
-details = [
-    ("student name", "Enter student name: "),
-    ("Roll No", "Enter Roll No: "),
-    ("Class", "Enter Class: "),
-    ("Section", "Enter Section: "),
-    ("Address Line 1", "Enter Address Line 1: "),
-    ("Address Line 2", "Enter Address Line 2: "),
-    ("City", "Enter City: "),
-    ("Postal Code", "Enter Postal Code: "),
-    ("Parent's/ Guardians's Contact No", "Enter Parent's/ Guardians's Contact No: ")
-]
 
-input_values = [input(prompt) for _, prompt in details]
+year = int(input("Enter the year: "))
+month = int(input("Enter the month: "))
+day = int(input("Enter the day: "))
 
-formatted_details = [f"{label}: {value}" for (label, _), 
-                     value in zip(details, input_values)]
+if year < 1 or month < 1 or month > 12 or day < 1:
+        print("The date is not valid.")
 
-max_length = max(len(detail) for detail in formatted_details)
-print('-' * (max_length + 5))
-print('|',' ' * (int(max_length / 2)),"Vydehi", ' ' * (int(max_length / 2) - 6),'|')
-print('-' * (max_length + 5))
-for detail in formatted_details:
-    print('|',detail, " " * (max_length - len(detail)), '|')
-print('-' * (max_length + 5))
+
+if month == 2:
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        if day <= 29:
+            print("The date is valid.")
+    elif day ==29:
+         print("The date is not valid.")
+         
+elif month in [4, 6, 9, 11]:
+    if day <= 30:
+        print("The date is valid.")
+    else:
+        print("The date is not valid.")
+         
+         
+         
+else:
+    print("The date is valid.")
+   
+ 
