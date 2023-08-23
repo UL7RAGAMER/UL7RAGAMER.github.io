@@ -1,0 +1,43 @@
+num = 1
+
+while num <=10:
+    print(num)
+    num +=1
+
+x = ''
+for i in range(1,6) :
+    i = str(i)
+    x = x + ' ' + i
+    print(x)
+num = 54321
+num = int(num)
+for i in range(1,6):
+    print(num)
+    num = num  // 10
+
+
+num = int(input('Enter a number'))
+
+for i in range(0,21):
+    print(f'{i} x {num} = {num*i}')
+
+
+num = int(input('Enter a number to count the no of digits'))
+no = 0
+while num!= 0:
+    num = num// 10
+    no +=1
+
+print(no)
+
+num = int(input('Enter a number'))
+i = 0
+x = 0
+while num != 0:
+    i = num %10
+    x+=i
+    num = num //10
+
+
+print(x)
+
